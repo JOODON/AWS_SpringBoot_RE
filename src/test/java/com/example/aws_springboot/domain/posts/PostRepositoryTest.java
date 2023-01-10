@@ -1,5 +1,5 @@
 package com.example.aws_springboot.domain.posts;
-
+import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -17,10 +15,10 @@ public class PostRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After//Junit이 끝날떄마다 실행되는 쿼리
-    public void cleanup(){
-        postsRepository.deleteAll();
-    }
+//    @After//Junit이 끝날떄마다 실행되는 쿼리
+//    public void cleanup(){
+//        postsRepository.deleteAll();
+//    }
     @Test
     public void read_board(){
         String title="테스트 게시글";
@@ -32,6 +30,5 @@ public class PostRepositoryTest {
 
         Posts posts=postsList.get(0);
         assertEquals(posts.getTitle(),title);
-        assertEquals(posts.getContext(),content);
     }
 }

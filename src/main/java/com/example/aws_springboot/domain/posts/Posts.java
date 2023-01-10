@@ -1,9 +1,10 @@
 package com.example.aws_springboot.domain.posts;
 
-import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor//기본 생성자 자동으로 추가
